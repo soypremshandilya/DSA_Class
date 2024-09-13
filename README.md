@@ -15,7 +15,7 @@ To get started with the code in this repository:
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/your-username/dsa-classroom.git
+    git clone https://github.com/your-username/DSA_Class.git
     ```
 
 2. **Navigate to the Repository Directory:**
