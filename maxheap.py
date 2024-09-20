@@ -3,18 +3,18 @@ class MaxHeap:
         self.heap = []
 
     def insert(self, value):
-        self.heap.append(value)  # Add the new element at the end
-        self._heapify_up(len(self.heap) - 1)  # Restore the heap property
+        self.heap.append(value)
+        self._heapify_up(len(self.heap) - 1) 
 
     def extract_max(self):
         if not self.heap:
             raise IndexError("Heap is empty")
         max_value = self.heap[0]
         if len(self.heap) > 1:
-            self.heap[0] = self.heap.pop()  # Move the last element to the root
-            self._heapify_down(0)  # Restore the heap property
+            self.heap[0] = self.heap.pop() 
+            self._heapify_down(0) 
         else:
-            self.heap.pop()  # Remove the last element if it's the only element
+            self.heap.pop() 
         return max_value
 
     def delete_element(self, value):
@@ -23,13 +23,13 @@ class MaxHeap:
         except ValueError:
             raise ValueError("Element not found in heap")
         
-        # Move the last element to the index of the element to delete
+    
         if index < len(self.heap) - 1:
-            self.heap[index] = self.heap.pop()  # Replace the element with the last one
-            self._heapify_down(index)  # Restore heap property after replacement
+            self.heap[index] = self.heap.pop() 
+            self._heapify_down(index) 
             self._heapify_up(index)
         else:
-            self.heap.pop()  # If it's the last element, just pop it
+            self.heap.pop() 
 
     def print_heap(self):
         print(self.heap)
@@ -67,12 +67,11 @@ if __name__ == "__main__":
     max_heap.insert(30)
 
     print("Heap elements:", end=" ")
-    max_heap.print_heap()  # Expected: [30, 20, 15, 5, 10]
-
-    print("Extracted max:", max_heap.extract_max())  # Expected: 30
+    max_heap.print_heap() 
+    print("Extracted max:", max_heap.extract_max()) 
     print("Heap after extraction:", end=" ")
-    max_heap.print_heap()  # Expected: [20, 10, 15, 5]
+    max_heap.print_heap() 
 
     max_heap.delete_element(10)
     print("Heap after deletion of 10:", end=" ")
-    max_heap.print_heap()  # Expected: [20, 5, 15]
+    max_heap.print_heap() 
