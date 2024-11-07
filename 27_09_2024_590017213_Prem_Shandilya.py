@@ -44,5 +44,5 @@ if __name__ == "__main__":
     root.right.right = Node(28)
     
     dll_head = binary_tree_to_doubly(root)
-    print("Doubly Linked List in sorted order:")
+    print("Sorted Doubly Linked List:")
     print_dll(dll_head)
